@@ -1,0 +1,36 @@
+python manage.py startapp #nameofsomeapp, adds __init__.py migrations tests.py admin.py models.py views.py
+#adding an app
+#within settings.py, under installed_apps = (, add app with single quotes and trailing comma
+#settings needed to change: installed apps (when adding a new Django app), templates (when adding a template for the first time), staticfiles_dirs (when adding static assets for the first time).
+*models create the data layer of an app and define the database structure, as well as allowing us to query the database
+models.py file contains set number of models
+models use class attributes to define fields
+conceptulaize models as spreadsheets
+
+
+			Model:
+		Field
+Record	|___|___|___|___|
+		|___|___|___|___|
+		|___|___|___|___|
+		|___|___|___|___|
+		|___|___|___|___|
+
+			Inventory:
+Reqs:
+store items wth title, description, and amount in stock
+allow admins to create, edit, or delte items
+allow users to see a list of items in stock, with details
+
+from django.db import models
+class Item(models.Model):
+	title = models.CharField(max_length=200)
+	description = models.TextField()
+	amount = models.IntegerField()
+	
+		Field
+Record	|___|___|___|___|
+		|___|___|___|___|
+		|___|___|___|___|
+		|___|___|___|___|
+		|___|___|___|___|
