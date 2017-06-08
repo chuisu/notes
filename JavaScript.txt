@@ -1,0 +1,3 @@
+var = variable
+var = object{ 'label' : "value", "label2" : 'value2', 'escapeChar' : 'Brandon\'s value'};
+var = array[1, 2, "1", "2"]
