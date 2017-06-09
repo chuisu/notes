@@ -107,4 +107,33 @@
 					eg. )RO{AJKTDc\0
 				Federal Information Processing Standard-181 compliant--adjust password length setting; generates FIPS-181-compliant password
 					eg. cdavicourgok
-			
+			To get to Pass Assistant:
+				Sysprefs > Users & Groups > select user > change password > click key (this opens pass assistant) > type popup menu > select type of password > change slider
+	# Two factor auth
+		Extra layer of security for Apple ID, sedigned to ensure only you can access account, even if someone knows your password
+		Account can only be accessed from trusted devices
+		Password is input when setting up new device, as well as 6 digit verification code sent to trusted device
+		# trusted devices
+			iPhone and iPad using iOS or later
+			Mac computers with 10.11 or later
+		# trusted phone numbers
+			Phone number can be used to receive text or call
+			Must verify at least one trusted phone number to enroll in two factor auth
+		# verification codes
+			Code is a temporary code that is sent to your trusted device or phone number
+			Stimulated when signing into a new device or browser with Apple ID
+			You can get a verification code from Settings on your trusted device
+			Different from the device password used to unlock iPhone/iPad
+		# turning on:
+			Sysprefs > iCloud > Account Details > Security > Turn on two factor authentication
+		# signing into your account requires these two:
+			your password, access to your trusted devices or trusted phone number
+			Need to: remember Apple ID pass, use a device passcode, keep trusted phone numbers up to date, keep all trusted device physically secure
+	# Setting firmware password
+		Enables low-level hardware protection. Disables starting mac from:
+			External HD, Optical disk, USB drive
+		# setting:
+			Restart Mac > Boot from Recovery > Utilities > Firmware Password Utility > Turn on Firmware Password > Enter password into password and verify fields > set password > quit
+		# resetting lost firmware pass:
+			Need to take to an apple retail store or apple authorized service provider.
+	# 
