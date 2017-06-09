@@ -154,4 +154,72 @@ model field types:
 			`class ItemAdmin(admin.ModelAdmin): # new class called "ItemAdmin" inherits from the class admin, using that class's method "Model Admin"
 				list_display = ['title', 'amount'] # display title and amount in list
 			admin.site.register(Item, ItemAdmin) # added "ItemAdmin" here to register`
+# querying data with Django ORM
+	`python manage.py shell`
+		opens python shell with Django initialized
+	`from inventory.models import Item
+	Item.objects.all()
+	# returns list with items
+	items = Item.objects.all()
+	item = items[0] #first item in array
+	item.title
+	#returns title of item
+	item.description
+	#returns description of item
+	item.amount
+	#returns amount associated with item
+	item.id
+	#returns id
+	`
+	`
+	item.objects.get(id=1)
+	#shows item object
+	item.objects.get(id=1).title
+	#returns title
+	item.objects.get(amount=10)
+	#returns error saying that more than one is being called
+	#.get is supposed to grab one, whereas .all grabs all
+	`
+	`
+	item.objects.filter(amount=0)
+	#shows items with 0
+	item.objects.filter(amount=0)[0].title
+	#shows item
+	item.objects.exclude(amount=0)
+	#shows items in stock
+# using url patterns, views, templates
+	Order of operations:
+		URL patterns -- views -- templates
+	eg: twosaints/urls.py -- announcements/views.py -- twosaints/templates
+	# url patterns
+		# regular expressions
+			defines search patterns for strings
+		# URL patterns example
+			`from django.confs.urls import url
+			from inventory import views
 			
+			urlpatterns = [
+				url(r'^$', views.index, name='index'), # expression to match, view to call if matched, name used in templates
+				url(r'^info/$', views.info, name="info'), # used if above doesn't match
+															# more lines mean more things to match if above doesn't match
+															#if no patterns match, we get a 404 error page
+			]
+			`
+		# configuring URL patterns
+			`from inventory import views
+			urlpatterns = [
+				url(r'^$', views.index, name='index),
+				url(r'^item/(?P<id>\d+)/', views.item_detail, name='item_detail'), # uses 'named group,' specifies that digits in this area will be called "id"
+				url(r'^admin/', include(admin.site.urls))
+				`
+			within views.py:
+				`
+				from django.shorcuts import render
+				from django.http import HttpsResponse
+				
+				def index(request):
+					return HttpResponse('<p>In index view</p>')
+				
+				def item_detail(request, id): #works off of line 212
+					return HttpResponse('<p>In item_detail view with id {0}</p>'.format(id)) # parses the argument id (specified with named group), and passes it into string
+				
