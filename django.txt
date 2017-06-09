@@ -218,8 +218,12 @@ model field types:
 				from django.http import HttpsResponse
 				
 				def index(request):
-					return HttpResponse('<p>In index view</p>')
-				
+					return HttpResponse('<p>In index view</p>') #outputs this html (AND ONLY THIS) in browser once request is served
+				#look up render function 
+				#eg of render:
+					#return render(request, 'inventory/index.html', {
+					#	'items': items,
+					#})
 				def item_detail(request, id): #works off of line 212
 					return HttpResponse('<p>In item_detail view with id {0}</p>'.format(id)) # parses the argument id (specified with named group), and passes it into string
 				
