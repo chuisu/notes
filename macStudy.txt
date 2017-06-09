@@ -1,0 +1,110 @@
+# Title
+=Result/summation
+*Term
+
+# Directory Services
+
+	network account support built into macOS
+	# connecting to AD
+		need: 	AD server domain name
+			Network admin user&pass
+			Mac computer ID (like esm-1977)
+		Open sys prefs > Users&Groups > Login Options > join
+		Fill in as necessary
+	# connecting to Open Directory or LDAP
+		need: 	server name or IP
+			SSL protocol req
+		Sys prefs > Users&Groups > Login Options
+		Click Add
+		Choose server from pop-up menu or enter domain name or IP
+		=This adds to directory server
+	# using network accts
+		name can be: shortname; shortname@domain.com; DOMAIN\shortname
+		If user&pass fields not available, here's how to login
+		Click Other login button
+=Binding to directory server accessed through Users&Groups pref pane
+=Logging in after binding to server is simple
+
+# File Sharing
+	# connecting to fileservers
+		Macs use: SMB,CIFS,AFP,NFS,WebDAV,FTP
+		Connecting: 	Command+K (or Go menu > Connect to server)
+				Server address
+		For Windows fileservers:
+				Command+K
+				FQDN (//DNSnameOrIP/sharename)
+	# personal filesharing
+		Other users can access your data with:
+			IP or Bonjour address of your mac
+			User account name with filesharing turned on
+			User account password for filesharing account
+		Sysprefs > Sharing > File Sharing
+			Add folders and users here, alter users' permissions, add new users (can be local, network user, created user from contacts list)
+=Accessing shared files requires go menu or Command+K
+=Sharing pref pane holds the keys to sharing own files
+=Many classes of users can be given access (even people on your contacts list)
+
+# Email, Contacts, Calendars
+	# internet accounts preferences
+		Internet accounts pref pane includes accounts made:
+			when macOS was configured with Setup Assistant
+			when account was created in an app	
+			when this pref pane was used
+		Adding account:
+			Sysprefs > Internet Accounts > Select type
+			email address + pass to sign in
+			Connect apps
+	# connecting to Exchange server
+		Mail and Calendar support:
+			Office 365
+			Exchange Server 2013
+					2010
+					2007
+		Need:	server user and pass from server admin	
+			FQDN for organization's *Client Access Server (CAS) (eg. exchange01.example.com) if no Autodiscover
+		Connecting with Autodiscover:
+			Sysprefs > Internet Accounts > Add to add exchange server if not in list > Exchange > Exchange email and pass > Sign in
+		Connecting without Autodiscover:
+			Sysprefs > Internet Accounts > Exchange > email and pass > Sign in > Description for account > CAS info (like outlook.office365.com)
+	# connecting to non-Windows servers
+		Mail > Choose a Mail account provider dialog > other mail account > user/pass > if successful, creates account ELSE manual creation > Incoming server mail pane type POP or IMAP > Mail server address > Outgoing Mail server > Create
+	# Adding accounts in Mail, Contacts, Calendars
+	 	Add account from Mail menu, Contacts menu, Calendar menu
+
+# Security
+	Multi-layered approach to security, meaning that security is designed into the fabric of everything
+	# Built-in security features
+		# *Sandboxing: prevents hackers from harming your programs, restricting:
+			Actions that programs can perform on your Mac
+			Files that programs can access
+			Programs that can be launched
+		# *Systen Integrity Protection: prevents potentially malicious software from modifying protected files and folder
+			SIP protects:
+				/System; /usr; /bin; /sbin
+			SIP allows third party installers to write to:
+				/Applications; /Library; /usr/local
+			Only processes signed by apple AND have entitlements to modify these folders can do so (eg Apple software and Apple installers)
+			Apps from the App store already work with SIP
+			SIP prevents software from changing startup volume
+		# *Library randomization: keeps malicious commands from finding their targets
+		# *Execute Disable: protects the memory in your Mac from attacks
+	# Creating strong passwords
+		Passwords are considered strong when they have at least:
+			eight characters
+			one uppercase and one lowercase letter
+			one number
+			one punctuation mark or symbol
+		*Password Assistant: checks your password strength or generates a strong password for you
+			Password types include:
+				Manual--enter a password; pass is rated, if too weak, tips are offered
+				Memorable--adjust password length setting; generates list of passwords containing words and some random characters
+					eg. wept1]puller
+				Letters & Numbers--adjust password length setting; generates list of passwords with a combination of letters and numbers
+					eg. tSFCF4ILh2yc
+				Numbers Only--adjust password length setting; generates list of passwords with only numbers
+					eg. 007515850186
+				Random--adjust password length setting; generates list of passwords containing random characters
+					eg. )RO{AJKTDc\0
+				Federal Information Processing Standard-181 compliant--adjust password length setting; generates FIPS-181-compliant password
+					eg. cdavicourgok
+			
