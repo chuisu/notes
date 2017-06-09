@@ -1,14 +1,36 @@
-python manage.py startapp #nameofsomeapp, adds __init__.py migrations tests.py admin.py models.py views.py
-#adding an app
-#within settings.py, under installed_apps = (, add app with single quotes and trailing comma
-#settings needed to change: installed apps (when adding a new Django app), templates (when adding a template for the first time), staticfiles_dirs (when adding static assets for the first time).
+# adding an app
+*app is folder with set of python files, means component
+each app fits a particular purpose
+	eg. each of these could be a seperate app
+		blog, forum, wiki
+	# app anatomy:
+		models.py:			data layer (structure of database tables and how queried)
+		admin.py:			admin interface
+		views.py			control layer (program logic for app, each takes http web
+							request and returns a response
+		tests.py			tests the app
+		migrations/			holds migration files
+		
+	# to make app:
+		navigate to folder > `python manage.py startapp nameOfApp`
+		
+within settings.py, under installed_apps = (, add nameOfApp with single quotes and trailing comma
+# settings needed to change: 
+	installed apps (when adding a new Django app), 
+	templates (when adding a template for the first time), 
+	staticfiles_dirs (when adding static assets for the first time).
+	
+	may need to change:
+		Debug (set to false when not actively developing)
+		DATABASES (if changing enginies, such as PostgreSQL, MySQL, etc.
+		smaller settings (consult the documentation for this)
+		
 *models create the data layer of an app and define the database structure, as well as allowing us to query the database
-models.py file contains set number of models
+models.py file contains any number of models for the django app
 models use class attributes to define fields
-conceptulaize models as spreadsheets
+conceptualize models as spreadsheets with fields as columns, and records as rows
 
-
-			Model:
+Model:
 		Field
 Record	|___|___|___|___|
 		|___|___|___|___|
@@ -16,21 +38,120 @@ Record	|___|___|___|___|
 		|___|___|___|___|
 		|___|___|___|___|
 
-			Inventory:
-Reqs:
-store items wth title, description, and amount in stock
-allow admins to create, edit, or delte items
-allow users to see a list of items in stock, with details
+Inventory:
+Reqs for app:
+	store items wth title, description, and amount in stock
+	allow admins to create, edit, or delte items
+	allow users to see a list of items in stock, with details
 
+# create the app "Inventory"
+	`python manage.py startapp Inventory`
+
+# edit models.py
+`
 from django.db import models
-class Item(models.Model):
+`
+	# model called Item being made
+`class Item(models.Model):
 	title = models.CharField(max_length=200)
 	description = models.TextField()
-	amount = models.IntegerField()
+	amount = models.IntegerField()`
 	
-		Field
-Record	|___|___|___|___|
-		|___|___|___|___|
-		|___|___|___|___|
-		|___|___|___|___|
-		|___|___|___|___|
+				Fields
+		  [	|valueforTitle  |___|___|___|
+One Record|	|valueforAmount |___|___|___|
+		  [	|valueforInteger|___|___|___|
+			|_______________|___|___|___|
+			|_______________|___|___|___|
+		
+	#called inventory_item
+model field types:
+	numeric data:				example
+		IntegerField			-1, 0, 1, 20
+		DecimalField			0.5, 3.14
+	Textual data:
+		CharField				"Product Name" # needs max length attribute
+		TextField				"To elaborate on my point..." # no input required
+		EmailField				george@email.com
+		URLField				any.url
+	File data
+		FileField				user_uploaded.docx
+		ImageField				best_avatar.jpg
+	Data
+		BooleanField			True, False
+		DateTimeField			datetime(1960, 1, 1, 8, 0, 0)
+	
+	# CharField with several attributes defined
+		`models.CharField(max_length=10, null=True, blank=True)`
+			
+		Field Attribute Options:
+			*max_length: defines max length
+			*null: field can be stored without data if true
+			*blank: allow for empty string if true
+			*default: gives default attribute for field
+			*choices: used to limit values to set of choices (T shirt order with choices
+			of size
+# Migrations
+	generate scripts to change the database structure through time as code is updated
+	When model is created, corresponding database table does not exist yet
+		This is why we need an initial migration
+			initial migration creates this table
+		Migrations are needed when:
+			Adding a model
+			Adding a field to a model
+			Removing a field
+			When changing the attributes of a field
+	# commands:
+		`python manage.py makemigrations`
+			generates migration files for later use
+			uses current model fields and current database tables
+				reads current models file and inspects current database state
+				determines from this what changes need to be made
+				makes database structure match models file
+				
+		`python manage.py migrate`
+			runs all migrations that have not yet run
+			`migrate --list` shows migrations and history
+		*unapplied migration: migration that has been created but not yet run
+			common source of errors during development
+	# continuing with inventory example...
+	`python manage.py makemigrations`
+		generates migrations file for "item" model in Inventory App
+	`python manage.py migrate --list`
+		shows all migrations (including those made by Django when initializing)
+		`[ ]` indicates that the following notated migration has not yet run
+		`[x]` indicates that the following notated migration has run
+	`python manage.py migrate`
+		runs all unrun migrations
+# Admin
+	Registers models/apps
+	allows signing in as site admin for administration
+	#example admin.py
+	`from django.ontrib import admin
+	
+	from .models import Item
+	
+	admin.site.register(Item)
+	
+	`
+	`python manage.py createsuperuser`
+		creates superuser with username email and password
+	#login to the server as admin by:
+		making sure `python manage.py runserver` is going
+		making sure you have the admin credentials
+		visiting localhost:8000/admin
+		logging in there
+	# admin interface
+		site administration is here
+		app appears as heading, models appear underneath, can manage these from here
+	# adding an Item (model) to the Inventory (app)
+		click Items (under Inventory)
+			gets to list display page
+		Top right, click add Item
+		Fill in information according to what fields you have configured
+	# to customize admin interface
+		to admin.py, add class:
+			`class ItemAdmin(admin.ModelAdmin): # new class called "ItemAdmin" inherits from the class admin, using that class's method "Model Admin"
+				list_display = ['title', 'amount'] # display title and amount in list
+			admin.site.register(Item, ItemAdmin) # added "ItemAdmin" here to register`
+			

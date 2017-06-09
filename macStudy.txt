@@ -136,4 +136,55 @@
 			Restart Mac > Boot from Recovery > Utilities > Firmware Password Utility > Turn on Firmware Password > Enter password into password and verify fields > set password > quit
 		# resetting lost firmware pass:
 			Need to take to an apple retail store or apple authorized service provider.
-	# 
+	# Locking a Mac Screen
+		Lock the screen to prevent access to mac, requiring use of password to unlock
+		Sysprefs > Security & Provacy > General > Require password /delay before a passwor dis required/ after sleep or screensaver begins > length of delay
+		Users can still restart the Mac and log in as themselves
+		# Locking with fast user switching enabled:
+			If mac has multiple users, fast user switching enables more than one user to be logged in at the same time.
+			To lock screen with fast user switching: click name at top right > Choose login window from menu
+	# Creating user accounts
+		If sharing a mac, separate user accounts protect user information and mac mac more secure
+	# Disabling automatic login
+		Automatic login means anyone can access Mac by restarting. 
+		Make sure autologin not setup for admin
+		Sysprefs > Users & Groups > login options > choose off from the "automatic login" pop-up menu
+	# Protecting start-up disk files
+		*FileVault full-disk encryption (or just filevault): uses XTS-AES 128 encryption to prevent unauthorized access to your startup disk.
+		When FileVault is turned on, you get a recovery key, which can be used to unlock the startup disk
+		When FileValut is active, the following require password to login:
+			Wake from sleep
+			Leave the screan saver
+		Setting up:
+			Sysprefs > Security & Privacy > FileVault > Turn on FileVault > "Create a recovery key and do not use my iCloud account" > Copy recovery and store in a safe place > enable users > restart
+	# Gatekeeper
+		Protects you from inadvertently installing malicious software.
+		Mac App Store is safest place to download apps (Apple reviews each app before acceptance)
+		If app is unsigned by Developer ID, gatekeeper will block app.
+		If you want to bypass:
+			Control click app > Open
+		Setting up allowed sources:
+			Sysprefs > Security & Provacy > general > Choose software sources
+	# Providing network security
+		# firewall
+			turning on:
+				Sysprefs > Security & Privacy > Firewall > "Turn on Firewall"
+			advanced prefs:
+				Firewall pane of sysprefs > Firewall options > Select firewall type or types:
+					Block all incoming connections--allow incoming connections for basic Internet functions only. Prevents sharing services. Allows email and web browsing.
+					Automatically allow built-in softawre to receive incoming connections--builtin apps automatically are added to allowed-apps list. Eg Calendar will receive data, since it's signed by Apple
+					Automatically allow signed software to receive incoming connections--apps signed by valid vertificiate authority reveive connections
+					Enable stealth mode--prevent unauthorized or unexpected probes from receiving a response. Mac will answer requests for authorized apps, but pings will fail when requesting FROM this mac
+		# VPN
+			supports following protocols:
+				Layer 2 Tunneling Protocol over IPSec (L2TP/IPSec)
+				Internet Key Exchange (IKEv2/IPsec)
+				Cisco IPsec
+				SSL VPN clients on the Appstore (AirWatch, Aruba, Check Point, Cisco, F5 Networks, MobileIron, NetMotion, Open VPN, Palo Alto Networks, Pulse Secure, SonicWall)
+			Connecting to VPN:
+				need:
+					vpn server address
+					vpn type vpn account name
+					user auth information
+				Sysprefs > Network > Add > VPN from interface pop-up > Choose kind of vpn connection > name service > enter server address/accountname > select authentication settings > OK, Apply > Select server to connect to > Show VPN status in menu bar
+				

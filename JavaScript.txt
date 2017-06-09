@@ -1,3 +1,46 @@
-var = variable
-var = object{ 'label' : "value", "label2" : 'value2', 'escapeChar' : 'Brandon\'s value'};
-var = array[1, 2, "1", "2"]
+var variable = 'variableValue';
+var object = { 'label' : "value", "label2" : 'value2', 'escapeChar' : 'Brandon\'s value'};
+var array = [1, 2, "1", "2", true, false, {'label' : 'value'} [1, 2]];
+
+array[0];
+	// return first value of the array array
+
+array[array.length] = 'new value';
+array.push('another new value');
+	// both push new value at the end of the array
+array.pop();
+	// removes value at end of array and returns that value to console
+array.splice(2, 1);
+	// remove 1 item with index 2 in the array array WITHOUT preserving length
+
+/*
+console ignores
+all of this
+*/
+
+1 === 1
+	// is the object on left identical to the one on the right?
+1 !== 1
+	// is the object on left NOT identical to the one on the right?
+1 == 1
+	// is the object on the left equal to the one on the right? String OR integer
+1 === '1';
+	// false
+1 == '1';
+	// true
+1 != '1';
+	// false
+
+var counter = 0;
+counter = counter + 1;
+counter;
+	// add 1 to counter
+var counter = 0;
+counter += 1;
+counter;
+	// add 1 to counter
+var counter = 0;
+counter++;
+counter;
+	// add 1 to counter
+
