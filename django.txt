@@ -159,9 +159,9 @@ model field types:
 		opens python shell with Django initialized
 	`from inventory.models import Item
 	Item.objects.all()
-	# returns list with items
+	# returns list with items (no titles)
 	items = Item.objects.all()
-	item = items[0] #first item in array
+	item = items[0] #first item in array, item with index 0
 	item.title
 	#returns title of item
 	item.description
@@ -169,7 +169,7 @@ model field types:
 	item.amount
 	#returns amount associated with item
 	item.id
-	#returns id
+	#returns id, which, in Django, starts at 1 for each model record
 	`
 	`
 	item.objects.get(id=1)
@@ -184,9 +184,9 @@ model field types:
 	item.objects.filter(amount=0)
 	#shows items with 0
 	item.objects.filter(amount=0)[0].title
-	#shows item
+	#shows item with index 0
 	item.objects.exclude(amount=0)
-	#shows items in stock
+	#excludes items that are out of stock
 # using url patterns, views, templates
 	Order of operations:
 		URL patterns -- views -- templates
@@ -225,5 +225,77 @@ model field types:
 					#	'items': items,
 					#})
 				def item_detail(request, id): #works off of line 212
-					return HttpResponse('<p>In item_detail view with id {0}</p>'.format(id)) # parses the argument id (specified with named group), and passes it into string
+					return HttpResponse('<p>In item_detail view with id {0}</p>'.format(id)) # parses the argument id (specified with named group), and passes it into view as a parameter
+					
+# implementing views
+
+	in views.py
+	`# make sure importing render
+	from django.http import Http404
+	# HttpResponse can be removed
+	
+	from inventory.models import Item #import the item model from the inventory app. needed to query the database
+	
+	# index view to show all items that are in stock
+	def index(request):
+		items = Item.objects.exclude(amount=0)
+		return render(request, 'inventory/index.html',{
+			'items': items, # 'items' string is the name of the variable to be used inside the template, where the items on the other side of the colon references line 241		
+			}) #curly braces are dictionary called template's context, the keys to which will be used as variable names inside the template
+	
+	def item_detail(request, id):
+		try:
+			item = Item.objects.get(id=id)
+		except Item.DoesNotExist:
+			raise Http(404)('this item does not exist')
+		return render(request, 'inventory/item_detail.html', {
+			'item': item,})
+	`
+	html files go in projectrootdjango/projectrootdjango/templates/nameofApp/index.html
+	configure templates by going into settings.py > find TEMPLATES variable > add under 'DIRS'
+	
+# template syntax
+	{{ variable }}
+	{% tag %}
+	{{ variable|filter }}
+		eg:
+		`<h3>{{ item.title }}</h3>
+		<!-- this makes the title of variable item an h3 within the page (see line 248)-->
+	
+<ul>
+{% for announcement in announcements %}
+<li><a href="{% url 'announcement_detail' announcement.id %}">{{ announcement.date }} -- {{ announcement.title }}</a><li>
+{% endfor %}
+</ul>
+`
+#this creates a list where announcements are looped, creating a listed item each time
+
+#template inheritance
+Django implements a base template that every template might use (meta tags, global css or javascript, structural elements (navbar))
+	base.html:
+		<html>
+			<head>	
+			</head>
+			<body>
+				<!-- stuff to be filled in by django comes here-->
+				{% block content %}
+				{% endblock content %}
+			</body>
+		</html>
+	inventory/index.html
+	{% extends "base.html" %}
+		
+			{% block content %}
+				<h3>Items in stock</h3>
+				<!-- more content -->
+			{% endblock content %}
+	
+		
+
+
+
+
+
+NEED TO LOOK UP/STUDY:
+TEMPLATES, CONFIGURING VIEWS
 				

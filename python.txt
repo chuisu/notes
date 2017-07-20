@@ -192,4 +192,7 @@ from datetime import datetime
 t = datetime.time(datetime.now())
 print "the current time is ", t
 #uses a combination of functions from datetime to tell the current time
-
+print timedelta(days=365, hours=5, minutes=1)
+#represents a span of time lasting 365 days, etc
+print "one year from now it will be: " + str(datetime.now() + timedelta(days=365))
+#print following string, add to it another string. Within the second string, add the span of time for 365 days to the exact time now.
