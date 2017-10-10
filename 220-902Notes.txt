@@ -1,0 +1,147 @@
+Windows 7 and 8 32 bit require only 1 GB of RAM, while 7 and 8 64 bit require 32GB or RAM
+A trojan is malware DISGUISED as something else
+PowerShell, among other things allows scripts and snippets to run. Also allows batch commands, and more.
+XP Mode is a virtual environment within Windows 7 
+Sync Center allows syncronization partnerships with external devices and enables managing offline files. 
+Applets are individual icons within the Control Panel.
+File History is a backup tool in Windows 8/8.1
+User State Migration Tool (USMT) is a command-line-based tool used to move files and user settings from multiple computers at once.
+Robust File Copy (or Robocopy) is a command-line-based tool used to move large amounts of data. It is the successor to Xcopy, though Xcopy still exists
+64 bit can be described as a processor type. It is required when installing any 64 bit operating system
+Recovery Console is a system recovery tool in Windows XP
+	If a computer displays "NTLDR is missing error" the best solution is to boot to Recovery Console, and use the fixboot command, which rewrites the NTLDR file. The NTLDR (NT loader file) is the boot loader for all releases of Windows NT OSs up to Windows XP. 
+	The fixmbr command rewrites the MBR of a hard drive
+	chkdsk command checks integrity of disk
+	bootcfg /rebuild can be used to scan for the OS installation s and rebuild that information into the boot.ini file.
+IMAP (internet message ACCESS protocol) receives messages. SMTP (Simple Mail Transfer Protocol) sends messages. POP (Post Office Protocol) downloads them.
+Bootrec.exe is a tool in the Windows Recovery Environment that con fix a master boot record, a boot sector, and the Boot Configuration Data (BCD) store. The Startup Repair option in the System Recovery Options dialog box should be used before bootrec.exe is used.
+Boot Logging can be enabled from the Windows Advanced Boot Options Menu (ABOM) (also called the Startup Settings in Win 8/8.1). Generally the fourth option. After this is enabled, system creates file called ntbtlog.txt. If a computer has problems booting, this can be used to generate a log file that can be analyzed from Safe Mode (also from ABOM) if Safe Mode works.
+ABOM can be accessed by holding shift while choosing restart
+Print Spooler can be stopped by using the net stop spooler command, or stopped by entering Computer Management > Service and Applications > Services and restarting the Print Spooler service. Alternatively you could open the Run prompt and type services.msc
+chkdsk /f fixes errors on the disk. Does not fix all errors, but checks disk for integrity, bad sectors, and similar issues. 
+Xcopy copies files and directory trees. 
+Tracert /w analyzes the path to another computer wiht a specific timeout per reply
+Diskpart is the command-line tool that enables you to make changes to the OS's partition table.
+PaaS is "platform as a service", which is a technology that provides the programmers with an entire platform, or environment, that they can work on.
+SaaS is "software as a service." uses the web to deliver applications that are managed by a third party vendor, and whose interface is accessed clientside. Examples are email and collaboration, customer relationship management, Zendesk, Google Apps, Cisco WebEx
+Iaas is "infrastructure as a service" or self-service models for monitoring, accessing, managing remote datacenter infrastructures. Examples include Amazon Web Services
+Community cloud is when multiple customers share a provider's cloud service.
+Advanced tab in Internet Explorer can alter TLS 1.2 (and other security protocols). The Security tab deals with zone security, not protocol-based security
+Connections tab in Internet Explorer concerns setting up Internet connections, VPNs, and proxy server connections.
+DxDiag can be used to analyze and diagnose a video card, as well as checking if the drivers are digitally signed.
+VPN is a service that can be used to establish a secure connection between two offices using the internet. It utelizes PPTP (Point to Point tunneling protocol) or L2TP (Layer 2 Tunneling Protocol). 
+VLAN is a virtual LAN, any broadcast dommain that is partitioned and isolated in a computer network at the data link layer. "Virtual" here refers to a physical object (the LAN) recreated and altered using additional logic.
+In a multifactor authentication system, a combination of physical smart card and PINs and passwords may need to be typed.
+Electrical and safety code states that cables must be installed properly, meaning that no cables can be left hanging or on the floor.
+WPA2 is more secure than WEP
+BitLocker is a type of whole-disk encryption (WDE), meaning that it encrypts what is being copied onto it in real time.
+Grayware is malware that behaves annoyingly but is not detrimental
+Spyware is software that tracks a users actions
+Worms are pieces of code that infect files and systems, self-replicationg, and spreading throughout networks on their own.
+FAT64 is best for USBs (or exFAT), since it is the successor to FAT32 and can format media that is larger than 32GB with a single partition. It was developed specifically for flash drives.
+CompTIA 6-step troubleshooting process is IdEs T Es VeDo: 
+	1. Identify the Problem
+	2. Establish a theory of probable cause (question the obvious)
+	3. Test the theory to determine the cause
+	4. Establish a plan of action to resolve the problem and implement the solution
+	5. Verify full system functionality and, if applicable, implement preventative measures
+	6. Document findings, actions, and outcomes
+Windows Vista requires 15GB to install
+Domain level group policies can disable screensaver and sleep settings
+New hard drives must be initialized and formatted in Disk Management
+If a user cannot print to a brand-new printer, the new printer may not be installed, or it may not be set as default
+The convert command turns a FAT32 drive into an NTFS drive without data loss and looks like this:
+	convert C: /FS:NTFS
+Session hijacking is when an unwanted mediator takes control of the session between a client and a server (an FTP or HTTP session, for example)
+ABOM > Last Known Good can revert the system to a known good state as long as someone has not logged in successfully to the computer
+Windows 7 Ultimate can run in Windows XP mode, join domains, and utilize BitLocker encryption. Starter and Home Premium don't have these features. Professional cannot use BitLocker.
+bootrec commands
+	bootrec /rebuildbcd <!-- fixes the boot configuration store -->
+	bootrec /fixboot <!-- one of the methods you can to try to repair in bootmgr.exe
+	bootrec /fixmbr <!-- rewrites master boot record in 7/vista
+Boot Configuration Store is in Boot\bcd
+HKEY_LOCAL_MACHINE stores information about the programs Windows runs when it starts
+HKEY_CURRENT_CONFIG contains data that is generated when the system boots
+HKEY_USERS stores information about users' profiles
+HKEY_CLASSES_ROOT contains information about applications and file associations
+Foreign disks need to be right clicked and ran through the import procedure. 
+chkntfs can check to see if a previous system shutdown completed successfully by checking whether automatic system checking is scheduled to run on aFAT, FAT32, or NTFS volume when the computer is started
+	if completed successfully, message will appear "C: is not dirty" else you will get an error
+SFC scans the integrity of all protected system files and can replace them with the correct version sif necessary.
+For secondary drives, ensure to format, initialize, AND partition them.
+MMC is the Microsoft Management Console that allows you to work with several console windows within the same program, allowing for flexible administrative tools. It uses snap ins, it saves the last place you were working.
+CompTIA best practices/procedure for malware removal Id QuDi Re(UpSc) ScEnEd:
+	1. Identify malware symptoms
+	2. Quarantine infected system.
+	3. Disable System Restore (in Windows)
+	4. Remediate infected system.s
+		a. Update antimalware software
+		b. Scan and removal techniques (safe mode, pre-installation environment)
+	5. Schedule scans and run updates.
+	6. Enable System Restore and create restore point (in Windows)
+	7. Educate end user.
+System Protection is a feature that creates and saves data about the computer's system files/settings by creating restore points.
+UEFI BIOS has GUID Partitioning Table (GPT), which is superior to MBR technology. GPT allows for 128 partitions, is not limited to the 2 TB maximum partition size of MBR, and stores multiple copies of itself on the system.
+Many tools can recover data from drive after it's formatted. Considering a drive safe after it's just formatted is very insecure.
+Typing %temp% in Run will open the current user's temp files
+Task Manager is for more immediate, short term data
+Performance Monitor is for long-term data
+By asking the user what steps they have taken so far, a lot of key information can come into the field.
+Windows+L locks the computer
+Windows Service Packs are compilations of software updates and patches
+msconfig utility can allow you to modify the startup environent via the general, boot, and startup tabs (in Win 7/Vista), and the general and boot tabs in Win8.
+Boot Config Editor is BCDEdit and is used to modify the boot configuration data store.
+Event Viewer contains log files of all errors taht occur ont he Machine. Common logs are Application log and System Log.
+Power Supplies usually have voltage selectors on them to account for voltage differences depending on countries
+Default path of the print$ administrative share is C:\Windows\System32\spool\drivers
+Enforce password history prevents users from using the same password more than twice
+Physical memory limit of Win8 Pro on 64bit is 512GB. Standard can only use 128.
+Accessing a shared resource requires both USER permissions and SHARE permissions
+Share-level permissions are rarely modified
+DoD 5220.22-M is a standard that specifies that a hard drive be propery purged with bit-level erasure software that does 7 complete passes.
+The Peter Gutman method requires 35 passes.
+Rapid Elasticity means that a service is scalable and can grow in real-time to your company's growth.
+Measured services is when the provider monitors the services rendered to bill the customer
+On-demand service simply means that users can get cloud connectivity at any time
+Resource pooling is the grouping of servers and infrastructure for use by multiple customers but in a way that is on-demand and scalable
+Patch management is the patching of many systems from a central location. WSUS (Windows Server Update Services) can aid in this task
+When troubleshooting using the CompTIA method, backup during the first step, so that you don't make irreversible changes to the computer before a restore point is made
+To reach System Restore utility, Run > systempropertiesprotection.exe; OR; Start > right-click CComputer > Properties > click System protection link
+Clarify when customer is hard to understand
+UAC (User Account Control) allows users to perform common tasks as non-admins, and as admins when necesasry
+BYOD means Bring Your Own Device, which introduces security risks such as the risk of having malware enter the network
+the Microsoft best practice concerning the page file (which is virtual memory), is to have the minimum setting as 1.5 times the RAM and the maximum as 3 times the RAM.
+The OS should always be installed to a primary partition, but before installing the OS, the primary partiition should be set to active
+The System Restore tool (see line 109) is the tool used to create restore points
+Regsvr32 command can import or register .dll files and unregisters/registers ActiveX controls
+NTFS can use file-level security, whereas FAT32 cannot.
+NTFS cluster sizes are SMALLER than FAT32 clusters.
+NTFS partitions are therefore more efficient, since cluster sizes are smaller.
+Disabling DHCP and instead using static IPs removes one of the types of packets that are prodcast from the access point, making it more difficult to hack.
+Setuperr.log contains information about setup errors when installing Windows.
+Setupact.log contains events that occurred during installation
+Unattend.xml is the answer file used by Windows during unattended installations.
+Setuplog.txt records the events that occurred during the text portion installation of the deprecated Windows XP. Windows Vista and beyond do not have a text portion
+One of the only ways to have unknown processes happening on a smartphone is if a program has unauthorized root access, which can allow programs to run in the background and therefore drain the battery.
+Copy /Y allows copying files without prompts
+Copy /Z copies networed files in restartable mode.
+Xcopy is used to easily copy entire directories of data to another location (superceded by Robocopy)
+Copy /A allwos you to indicate an ASCII text file to copy
+chkdsk /I performs a less vigorous check of index entries (skips certain comparative processes)
+chkdsk /F fixes errors on the disk
+chkdsk /R locates bad sectors and recovers readable info 
+msconfig enables yoou to modify the startup selection, known as the Selective Startup feature
+a black exclamation mark in Device Manager tells you that a device is malfunctioning. Might need to be replaced, reseated, firmware might need upgrading
+Authentication can be carried out by utilizing something a user is (such as a fingerprint) something the user knows (such as a password) something a user has (such as a smart card) or something the user does (such as a signature or speaking words)
+Network Addresss Translation (NAT) translates all internal IPs into one external public Internet IP for communication with outside sources. This enables outside sources to "see" the public IP but not the internal IPs.
+Aattrib -H *.* will unhide all files in the folder. attrib allows you to work with the RASH file attributes. R (read only), A (archive), S (system), and H (hidden). Minus sign will remove the attribute, a plus sign will add the attribute.
+sysprep (System Preperation Tool) can allow removing system-specific identifiers. 
+Need 512MB of ram minimum to install Vista
+Windows Experience Index is based on the lowest component score. RAM2GB5.0Video3D3.8CPU2,4GHz4.2 means that the RAM scored 5, the Video scored 3.8, and the CPU scored 4.2
+It's okay to check resources when dealing with a client!
+File History is the utility in Windows 8 used to backup data. 
+Backup Status and Configuration is Windows Vista backup tool
+Backup and Restore is Windows 7 backup tool.
+EFS is Encrypting File System. User's certificate should be exported if they want to read encrypted files on a new system.
+
+
