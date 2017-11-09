@@ -185,7 +185,7 @@ class anotherClass(myClass): #inherit anotherClass from myClass
 #import
 from datetime import date #import date class from datetime library
 #use imported
-today = date.today() #today() method exists in date.class, making today variable out of it
+today = date.today() # today() method exists in date.class, making today variable out of it
 print today.day, today.month, today.year
 #uses information 
 from datetime import datetime

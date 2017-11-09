@@ -143,5 +143,101 @@ File History is the utility in Windows 8 used to backup data.
 Backup Status and Configuration is Windows Vista backup tool
 Backup and Restore is Windows 7 backup tool.
 EFS is Encrypting File System. User's certificate should be exported if they want to read encrypted files on a new system.
+\%systemroot%\System32\Config is where registry hive data is found
+USB flashdrives are a good method of installing to several computers, but not several hundred
+Vista Ultimate 32-bit can only be upgraded to Windows 7 Ultimate 32-bit. As a rule, 32bit versions of windows can only be upgraded to 32bit versions
+Unicode is the code used to represent characters among multiple computers' language platforms.
+A down arrow in Device Manager means that the device is disabled
+Classification protects confidential information from being disclosed publicly
+Windows 8 requires 16 GB for 32bit and 20GB for 64bit
+Local Security Policy implements local auditing.
+System Information window is used to view complex information about the system
+System Properties is used to determine things like what the WorkGroup of the computer is, and what the Windows Experience Index for the computer is
+Use the System Configuration tool (msconfig.exe) to disable certain services, such as the firewall.
+Drives with slow reaction times are often fragmented drives
+Default location of windows system files is C:\Windows\System32
+C:\Windows is the %systemroot%, where the OS is installed to
+C:\Windows\System32\Config is where registry hives are found
+Disk Defragmenter in Computer Management needs 15% free to defrag
+If less than 15% is free, use defrag.exe -f
+sigverif.exe is a tool that can be used to check for unsigned drivers within Windows
+Control Panel > Region and Language > Keyboards and Languages > Change keyboards will allow to change the keyboard layout in Win 7
+Setting the time on the computer requires the command "time"
+the command "time" sets the computer time
+net stop mpssvc command will stop Windows Firewall service
+Event Viewer logs all errors that occur on the system, even with random exe files
+Windows recovery environment can be referred to as WinRE or System Recovery Options as well
+Xcopy can copy NTFS permissions
+robocopy /S will copy subdirectories but will skip any empty ones.
+robocopy /E copies all subdirectories, including empty ones
+robocopy /B copies files in backup mode
+/DCOPY:T also copies timestamps of files/folders
+UAC can be turned off under User Accounts in the COntrol Panel
+The Application dock is in Windows 7 but not in Vista. It is an enhanaced version of the taskbar, allowing for hovering over applications that are running in the taskbar to view their current statuses.
+Libraries are logical representations of user's content. THey are known as metafolders. Examples are Documents, which includes My documents and Public Documents
+Propogate knowledge to immediately relevant people before taking action (coffee in the server room requires notifying the network admin before mopping up the mess)
+Getting to services: Control Panel > Administrative Tools > Services
+getting help to a Windows command can use the help command, or append /? to the command
+To change the computer name: Start > right click computer > Properties > Computer Name tab > Change; OR; Run > systempropertiescomputername.exe > Change
+GSM (Global System for Mobile Communications) and GPRS (General Packet Radio Service) are used to connect to the Internet at 2G, 3G, and 4G speeds
+A hard reset on an Android phone will reset the phone to its original state
+Printing cannot be paused from the Printer Properties screen
+Printing can be paused by double clicking the printer and making the modifications from the ensuing window
+Restore points are saved in the System Volume Information folder
+Ports tab can show what connections the printer is using
+Minimum processor requirement for Windows 7 is 1GHz, Vista requires 800MHz
+Hybrid cloud storage is a mixture of public and private clouds, where some data is located on site at the organization, and some is hosted by the vendor
+Spray cleaner on a clean, lint free cloth before wiping
+To get to MMC: Start > Run > MMC
+defrag.exe can be automatically added to the task scheduler in windows to increase hard disk performance
+Character map enables you to copy characters from any font type. 
+To open character map in Win7 or Vista: Start > All Programs > Accessories > System Tools > Character Map
+A soft reset will clear the ram of a tablet or Android device
+The gpresult command allows you to view the results of the Microsoft Group Policy configuration and print it to various file formats
+GPedit.msc opens the Local Group Policy Editor window
+Secpol.msc opens the Local Security Policy window
+When the computer crashes and the "repair your computer" and "safemode" options appear in the black and white THAT'S ABOM
+When compressed air is used regularly, it can prevent hardware faults
+Unattended installations of Windows require answer files. This file is normally named unattend.xml and can be created by using the Windows SYstem Image Mounter (Windows SIM) program.
+Autochk.exe is an executable (and system process) that checks the integrity of NTFS
+Action Center in Windows 7 can save problem descriptions and solutions
 
-
+Moving the paging file (virtual memory) to another drive can free up disk space on the original drive. If programs are drive intensive on the original drive, the original drive is now freer, since hte workload is being shared between the drives now
+PRAM (phasechange memory) needs to be reset to fix certain problems, such as WiFi connectivity, but is more of a last-ditch effort option
+A Type 1 Hypervisor runs OSs on bare metal, or natively. Examples are Microsoft Hpyer-V, ESXi
+Type 2 hypervisors run within another OS (Virtualbox)
+A primary partition must be set to active to boot to the operating system
+When dealing with prohibited content, there will be a first responder responsible for identifying the issue, reporting through the proper channels, and preserving data and devices used. They will be in charge of starting the documentation process which includes chain of custody, tracking of evidence, and maintaining a chronological log of evidence
+Windows 8 Pro and Enterprise can join domains
+Ultimate is the name used for the most powerful Windows 7 version
+The message "Print Sub-System not available" means the spooler service might not be running or is stalled
+net start spooler will start the print spooler
+To get to windows update in Windows 7: Start > All Programs
+Google accounts sync to cloud
+Backups should be considered first, and should be in the back of your mind while you implement a potentially system-breaking anything
+Security log contains entries for Auditing
+Windows 7 DVD is called GRMCULXFRER_EN_DVD
+SSL provides encryption at the Session layer
+To get to Advanced tab of Printer Properties: Start > Control Panel > Devices and Printers > right click printer > Printer Properties > Advanced
+Sysprep is a utility built into windows for image deployment. 
+Surge suppressors safeguard connected equipment by directing surges to the path of least resistance
+Whaling is phishing, but for VIP individuals
+Action CEnter in Windows 8 displays importat messages about solving issues
+Winload.exe is the boot loader program for Windows 8, 7 and Vista
+Surge suppressors use an MOV to protect equipment (Metal Oxide varistors)
+Drive must be partitioned before formatted
+Windowss 8 computers in a workgroup can have 20 or fewer concurrent connections
+Connections can be made in Remote Assistance by email.....................>??????
+Disabling SsID broadcast is a pretty low level of wireless security protection
+Most practical way to prevent intrusion is through a firewall
+Windows 7 does NOT use CD-ROMS
+Safe mode is a safe bet when a computer is rebooting continuously (system log might not tell you much)
+A Zombie is an individual compromised computer connected to the INternet. the zombie can be controlled remotely and updated from a master controller.
+Many large networks use a proxy server to faciliate caching of web pages, and often this is for public sites only.
+To navigate to Proxy settings: IE > Internet Properties > COnnections > LAN settings
+SCSI hard drives and RAID controllers will need special drivers during the installation process if they are not recognized immediately
+BSODs are most often caused by driver failures
+msconfig can be used to change the total cpu cores used by windows (Boot tab > Advanced options button)
+Loading RAID drivers happens even before partitioning the hard drive during a clean Windows 7 install
+Windows 7 Starter does not include Aero, Windows 8.1 Does not include Aero 
+DHCP Partner down error means that the server has a failback which failed
