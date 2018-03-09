@@ -149,11 +149,31 @@
 		For example: a > 50 //is variable a greater than 50?
 			     b == 20 //is variable b equal to 20?
 			     c != 100 //is variable c not equal to 100?
-	the == sign is a conditional operator, the = is an assignment operator
+	the == sign is a comparison operator, the = is an assignment operator
 	
 	No semi colon after if statement curly braces	
 	`if ( a == b) {
 		alert("Yes, a is equal to b");
 	}`
 =Conditional statements, represented within the parentheses following the "if", evaluate to true or false. If the statement runs as true, at least for the above examples, they allow the code within the curly braces to run.
-
+#Else
+	`var balance = 5000;
+	
+	if ( balance > 0 ) {
+		alert("The balance is positive");
+	} else {
+		alert("The balance is negative");
+	}
+	//set the variable balance to 5000, then check to see if the variable balance is greater than 0. If it is, output the alert with the string "The balance is positive", and if it is not, output the alert with the string "The balance is negative"`
+	Were this the case, WHAT IF BALANCE WERE ZERO?
+		the program would output "The balance is negative" erroneously. Really, the conditional should be `if ( balance >= 0 ) ...... `
+#Comparison operators
+	*Comparison operators evaluate to true or false for use in conditionals
+		== != > >= < <= === !==
+		=== is the strict equality operator
+			eg:
+			`var a = 123
+			var b = "123"`
+			a == b evaluates to true
+			a === b evaluates to false
+		

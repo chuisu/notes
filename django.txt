@@ -32,7 +32,7 @@ conceptualize models as spreadsheets with fields as columns, and records as rows
 
 Model:
 		Field
-Record	|___|___|___|___|
+Record  	|___|___|___|___|
 		|___|___|___|___|
 		|___|___|___|___|
 		|___|___|___|___|
