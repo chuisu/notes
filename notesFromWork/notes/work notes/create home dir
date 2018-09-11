@@ -1,0 +1,12 @@
+RDP to \\hamfs (or fileserver of remote)
+Go to Users folder of fileserver
+Create folder with user's first initial and last name
+
+Permissions:
+Disable inheritance
+Domain users needed: user, domain admins, workstation admins
+user receives modify permission, both admins receive full control
+Sharing tab > Advanced sharing > Share this folder, append "$" to name of folder
+Permissions: user, domain admins, workstation admins; each with same respective permissions as before
+
+Look at another folder to check on whether or not these settings match

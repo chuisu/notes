@@ -1,0 +1,13 @@
+System Administration
+Start GEDI
+`change station` [extension]
+Change details
+
+Different tabs have different info
+Enhanced Call Forwarding can be used to forward to cell on tab 3
+enter number preceeded by 91
+change active from n to y
+
+Port assignment
+type list configuration stations
+Left is board identifier, rightmost numbers are ports. If numbers are present, port is used. u means unused, p=psa?

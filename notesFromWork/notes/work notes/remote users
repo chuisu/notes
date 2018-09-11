@@ -1,0 +1,11 @@
+BaillieRAUsers
+Need to be local admins on server
+    server: nyhamdcrrds
+Users will have to login into baillie.okta.com and change their password.  
+Users will have to install the Cisco AnyConnect software on their computers.  They can get it at
+https://www.dropbox.com/sh/kohl05d8hrxbrdf/AABWthYGvexY-Guf5lEKwhiXa?dl=0
+
+
+After installing Cisco AnyConnect they can launch the application.  The application will ask for the VPN address.  It is at 
+Https://vpn.baillie.com
+

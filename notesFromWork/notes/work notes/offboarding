@@ -1,0 +1,31 @@
+Change user's mailbox to shared mailbox:
+Visit portal.office365.com > Admin > Admin Center > Exchange
+Recipients > Mailboxes
+Search for user's mailbox
+Highlight mailbox
+On right, under convert to shared mailbox, click convert.
+Close
+
+Forwarding:
+Double click shared mailbox
+Click Mailbox Features
+View Details under Mail Flow
+Enable Mail Forwarding
+Browse > select who email should be forwarded to
+
+Full rights/send as:
+Double click shared mailbox
+Click mailbox delegation
+For Send As... click the plus sign and search for user
+For Full Access... Click plus sign and search for user
+Never select send on behalf
+save
+
+Remove license:
+portal.office365.com > Admin > Active Users > find and select user > Product licenses > Turn off Office 365 Enterprise E3
+
+AD:
+Rename their account by appending the date to the name
+Remove them from everything in Member Of but Domain Users
+Move account to Ex-Employees
+Disable account

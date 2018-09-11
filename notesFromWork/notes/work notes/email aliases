@@ -1,0 +1,4 @@
+ADUC > find user > right click > Attribute Editor > proxyAddresses
+Add relevant emails
+e.g. smtp:lhagzan@greenelumber.com
+     smtp:lhagzan@greenelumber.mail.onmicrosoft.com

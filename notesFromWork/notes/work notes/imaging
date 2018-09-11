@@ -1,0 +1,8 @@
+Insert usb
+boot from usb (true image)
+restore correct .tib file
+Shut computer down when operation is completed
+
+could be improved with sccm or OSD image
+
+need a way to guarantee drivers end up on machine

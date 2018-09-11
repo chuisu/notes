@@ -1,0 +1,5 @@
+RDP into HamAVP01
+Open Kaspersky Security Center
+Unassigned Devices > find machine > drag to Hamburg
+Hamburg > right click machine > all tasks > run task > deploy network agent
+                                                     > deploy 2c KES

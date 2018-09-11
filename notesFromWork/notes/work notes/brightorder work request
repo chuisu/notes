@@ -1,0 +1,9 @@
+to create new user do Work Request
+Severity: Severity 4
+Area impacted: User Access and Menu Management
+Environment: Prod
+Summary: Create new user John Smith (they’ll create username)
+Description: Please create user John Smith.  They will have the same access as Joe Blaugh.
+
+When asked to test Dev, reply okay please move to test/prod
+

@@ -1,0 +1,94 @@
+:e opens files
+  ex: :e /path/to/file.txt
+insert file: :read
+places file on line below cursor
+specify where to paste the file with :[number]read where the [number] specifies where the output gets pasted
+read the output from a shell script with ![script] where [script] is a working shell script
+  ex: :read file.txt
+      :8read file.txt
+      :read !ls -al
+
+move between files with:
+  :bn (buffer next; move to the next buffer)
+  :bp (buffer previous)
+  :ls (list buffers)
+  :b[number] (moves to numbered buffer in list)
+  :bf (buffer first)
+  :bl (buffer last)
+  :bm (buffer modified; use to review changes)
+  :bd (buffer delete)
+
+:x can be much better at saving files!
+can specify what from the buffer to write with :[number]wq which will write the changes from the line specified by [number]
+
+create new files with:
+  :new (new [No Name] buffer in horizontal split window)
+  :enew (new [No Name] buffer without split)
+  :vnew (new [No Name] buffer in vertical split window)
+  :tabnew (new [No Name] buffer in new tab)
+
+You can create a new scratch file with :Scratch (creates a new scratch window as if you did :new)
+
+creating new files from template:
+  can create new files using template
+  needs configuration of .vimrc
+  (see pg 60 of provim.pdf)
+
+general format for editing commands:
+[number]operator (([number]motion)|text)
+where [number] is a count for the operator or the motion
+and where the | denotes that you can use either of the options
+
+% allows you to move between syntax blocks, so if there is a bunch of stuff between a ( and a ), it can move (and potentially select) all of it.
+:
+Text objects:
+Notated as [special motion] [object]
+[special motion]s can be inside and around (meaning inside the object, which excludes whitespace, and around the object which includes whitespace)
+[objects] can be words, sentences, paragraphs, tags, quotes, blocks (denoted by braces, brackets, etc.)
+  ex. viw 
+        this selects (with v) the inside (special motion i) of a word (w)
+     in the html example: 
+     <tag>content</tag>
+     the content can be selected with special motion i, but the whole object can be selected with vat
+       vat selects (v) around (a) the tags (t)
+    you can use a character to select deliniating object characteristics. For example, if you wanted to select text within a set of backticks, use vi` 
+    or if you wanted to select text around curly braces, use va{
+    You can't use this for everything. Just tested with ^, to no avail.
+
+Ctrl+o allows you to move to a special mode from within insert mode that allows you to input commands that move the cursor and whatnot. It only allows for one command (ie 2b, vis, %, etc.)
+
+Registers are lists of content you've stored
+Nine types of registers (each preceeded with a double quote to denote that it's a register)
+"" (unnamed register)
+"0 to "9 (numbered registers)
+"- (small delete register)
+"a to "z or "A to "Z (named registers)
+": ". "% "# (read only registers)
+"= (expression register)
+"* "+ "~ (selection and drop registers)
+"_ (black hole register)
+"/ (last search pattern register)
+
+:reg will open a new window within vim listing contents of each register.
+you can paste from a specific register by calling it by name and using p
+  ex. "0p
+you can also yank into a specific register the same way
+  ex. vis"0y (select inside this sentence and yank it into the "0 register)
+You can't store content into a named register ("a to "z) without explicitly telling vim to do so. You have to specify.
+the difference between "a and "A is that "a is the register (yanking to it will replace content inside), and "A will append to the register when yanked to.
+
+Okay this is fucking cool: calculate a result using VimL in insert mode by pressing Ctrl+r followed by =, and it will use the expression register to insert the returned value. For example, if I wanted to know what 103 * 84 was, I can input the result here: 8652. Absolutely bonkers.
+
+worth noting that Ctrl+r can select any register by entering its identifier (minus the double quotes, the double quotes are added for you when you press Ctrl+r)
+
+You can fold sections of a document with zf used in various formats:
+  [select a section]zf
+  zf[motion]
+  zf'a where a is a mark (folds from cursor up to mark)
+  [number]zF where [number] is a count of how many lines to fold
+
+zc closes the fold, zo opens the fold za alternates (or toggles) the fold
+zM closes all folds, zR opens all folds
+
+Visual block mode can select content in a block, regardless of lines. Access it with Ctrl+v
+

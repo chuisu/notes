@@ -1,0 +1,10 @@
+RDP into hamkantech
+Open workstation (shortcut)
+Login (upper left) with account (not AD)
+users > card > new
+    full name
+    card type
+    email
+    card number (bottom right of card); doesn't need XSF()
+
+bchoi1

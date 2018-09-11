@@ -1,0 +1,6 @@
+Group policies don't seem to be used here too much, and this could be changed for greater efficacy and ease of deployment.
+
+set action center options
+set power options
+set WiFi on desktops
+

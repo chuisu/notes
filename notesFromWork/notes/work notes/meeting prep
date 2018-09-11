@@ -1,0 +1,18 @@
+Mike's One on One 6/20/2018
+  Things are going well; learning a lot about the company's processes and applying that knowledge through solution of tickets.
+  Have solved tickets ranging from mailbox and user creation to shipping out machines
+  There are some positive changes that could be made to improve some aspects of operations (at least from my end)
+    Documentation:
+      if there's a mark at all that I would like to leave, it's the centralization and compilation of the documentation that we have
+      there are some holes in the knowledge that I have been compiling as plaintext on my computer, and these would prove very helpful in a place like Confluence
+      also necessary considering the nature of employment here, and how lots of short term workers seem to work here
+    Asset tracking:
+      Asset tracking is essential.
+      FileMaker is a good option, or there are some open source options we could explore
+      I could even create a DB.
+      It is just not centralized, and there is no definitive source of knowledge. If we needed to know the serial of a machine that we deployed (RMA, imaging, etc), a MAC address, etc, we are dead in the water if we can't remote to the computer or contact the user.
+    Ticketing:
+      
+    GPs:
+      
+    Imaging process:

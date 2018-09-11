@@ -1,0 +1,51 @@
+Onboarding setup:
+Checklist can be found here: https://baillielumber-my.sharepoint.com/:x:/r/personal/knoltee_baillie_com/_layouts/15/Doc.aspx?sourcedoc=%7B3bb00ce4-dfb8-4a57-8a5a-82867731f8fa%7D&action=default
+Depending on machine, necessary to choose the correct tab from bottom
+
+Complete list:
+Turn off wireless on desktops
+Rename computer
+Join domain (Hamep001.com)
+Update/install drivers
+    Device Manager > look for yellow triangles
+    On E580s, Standard SATA AHCI Controller needs update
+Change permissions on C;\Users\Public\Desktop
+    Domain Users: Modify
+Move computer into GPO OU
+    Move to correct OU for site
+    gpupdate /force
+Label computer
+Make default apps
+    Picture viewer (needs registry hack)
+    Outlook 2016
+    IE
+    Adobe Reader
+Antivirus
+Video Driver located in C:\swtools\drivers\ivga
+Document serial
+Login as User
+Activate Office 365 
+Create AS400 sessions 
+    (\\HAMFS\Shared\IT\Client Access installation and configuration for AS400 set-up.docx)
+Change Client Access to default to AD printer (?)
+IE put 192.168.100.3 in compatibility mode
+    Gear icon > Compatibility View Settings > add exception for 192.168.100.3
+Intranet as home page
+    Gear icon > Internet options > http://intranet
+Launch Outlook
+Action Center
+    Lower right in taskbar > Flag icon > Open action center > Change action center settings > uncheck all items
+    this could be improved by use of group policy
+Launch RVI, enter \\hamburg\image for image location
+    (ask about this)
+Printers
+Dictation software
+    \\hamdictate\SEE_download\Technical Documentation
+Phone coverage
+Update phone list
+    \\intranet\Intranet Material\Phone Directory\Phone Ext List.doc
+Scanning to S drive
+    Varies per printer
+Home folder created
+Bitlocker (only for windows 10?)
+Change ADUC to require password change

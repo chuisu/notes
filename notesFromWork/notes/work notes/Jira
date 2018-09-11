@@ -1,0 +1,64 @@
+meeting - warm handoff 6/21/2018
+Action items:
+log into sdadmin
+check out configuration
+read documentation
+
+After the warm handoff, I was tasked with development and logistical planning of the front end of Baillie's Jira instance. This included the following:
+  End user-facing:
+    coordinating colors
+    icon/favicon implementation
+    UI design considerations
+    portal setup
+  Agent facing:
+    dashboard implementation
+    queue setup
+  System facing:
+    ticket/issue importation
+    mail setup
+
+Coordinating colors
+Within Jira Administration (gear icon) > System > User interface > Look and feel:
+Header Background Color: #ffffff
+    Header background should be white
+Header Highlight Background Color: #ffffff
+    When items in header have focus, the background should remain the same
+Header Separator Color: #c9c9c9
+    Horizontal line separating header from content should be gray, closely matching system content separator color
+Header Text Color: #0e1f19
+    Text in header should be close to black (slightly green)
+Header Text Highlight Color: #015e3d
+    This is the "Baillie color" as taken from baillie.com. Items with focus in the header will get this color
+Menu Item Highlight Background Color: #015e3d
+    In dropdown menus, backgrounds for items with focus will have the Baillie color
+Menu Item Highlight Text Color: #ffffff
+    In dropdown menus, text will be white for readability on the Baillie color
+Button Background Color: #006a46
+    A variation of the Baillie color, buttons will be green
+Button Text Color: #ffffff
+    On top of the Baillie color variation, button text should be white
+Link Active Color: #00a365
+    When the button and other links with the Baillie color (or variations) have focus, they should turn bright green
+Heading Color: #292929
+    Headings should be close to black
+Link Color: #015e3d
+    Links should be the Baillie color
+
+Gadget Color 1: #015e3d
+    The primary gadget color should be the Baillie color
+
+Icon/favicon implementation:
+Assets were taken from www.baillie.com
+    Favicon was taken from /images/favicon.png
+    Icon/logo was taken from /images/bailliehrlogo.png
+Within Jira Administration > System > User Interface > Look and feel:
+Logo > Upload from File > upload bailliehrlogo.png
+Favicon > Upload from File > upload favicon.png
+
+UI design considerations:
+The most readable configurations were those with black text on white background. There were iterations where text was white with the baillie color as the background. Though this was readable, users (especially agents) would have to read and navigate using these for hours at a time. After a while, this configuration and configurations like it would surely get exhausting. The human eye, however, is accustomed to reading black text on white. Not only does this make for a more comfortable reading experience, but the look that's achieved is quite clean and aesthetic. Implementing the Baillie color (#015e3d) as highlights in this configuration works well for branding without being overt. "Highlighted" items, in this case, comprise the following: links, items with focus, gadget headers, menu items with focus. As these items are a minority on screen real estate, such a bold color as #015e3d provides a balanced contrast. Additionally, when items have focus and gain this color, it provides power to the action that the item telegraphs, allowing the user to more intuitively navigate and use tools.
+
+Portal setup:
+
+
+

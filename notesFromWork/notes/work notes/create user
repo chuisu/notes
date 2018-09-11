@@ -1,0 +1,30 @@
+Creating email:
+Login to \\HamE2k13
+Run Exchange management shell
+Run the following script, where user's name is replaced by relevant information
+New-RemoteMailbox -UserPrincipalName "FLastname@baillie.com" -Alias "FLASTNAME" -Name "Firstname Lastname" -FirstName "Firstname" -LastName "Lastname" -DisplayName "Firstname Lastname" -OnPremisesOrganizationalUnit "Medallion Forest Products" -Password (ConvertTo-SecureString "baillie45" -AsPlainText -Force) -ResetPasswordOnNextLogon $false
+
+In AD, find user in Medallion folder
+place user in same group as like user.
+add same permissions as like user
+Make certain they are in the Okta365 group
+Under profile tab, ensure Login Script is the same as like employee
+
+Create home directory (see notes file)
+
+Activate mailbox:
+Login at https://portal.office365.com
+Click admin > users > Active Users
+Search for user
+Click user, pane appears to the right
+Click edit to the right of product licenses
+Change location to US
+Click Office 365 Enterprise E3 to switch it on
+Click save, close, close
+
+Log in as user to comproom-win7
+Visit http://baillie.okta.com
+
+Change email address if they are not @baillie.com
+This is done here:
+https://hame2k13/owa/auth/logon.aspx?replaceCurrent=1&url=https%3a%2f%2fhame2k13%2fecp%2f%3fExchClientVer%3d15

@@ -1,0 +1,26 @@
+Could have gitlab with organized, tagged folders
+
+Folders would have tags according to each item, easily searchable.
+
+Gitlab may not be the best way to do this;
+would be nice to be able to tag each article
+Confluence would be a great way to do this
+
+May look simple in django
+Django app overview:
+App documentation
+  Model document:
+    attribs:
+      title
+      body
+      tags
+      upload
+      etc
+  Template:
+    Would provide simple, search-engine feeling page on surface
+      Search by tags, title, etc
+    Needs page that organizes articles by tags, other organizational details (folders?)
+    document detail page provides more info, related documents, etc
+
+Docusaurus looks good as well.
+

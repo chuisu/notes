@@ -1,0 +1,10 @@
+Add user to spreadsheet 
+  \\hamfs\shared\it\illumiti users.xlsx
+https://hame2k13/ecp
+contacts > add mail user
+password should be illumiti45, require to change
+add user's AD object to BaillieRAusers
+move user's AD object to VendorContractors
+add description to user's AD object to "illumiti employee"
+send mail to Arun Rajappa with attachment of updated illumiti users.xlsx and body "Same procedures as before. Please see attached."
+
