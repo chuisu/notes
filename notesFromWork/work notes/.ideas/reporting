@@ -1,0 +1,12 @@
+There is a lot of notification fatigue going on, so when things do go wrong (like the internet going down at an entire remote site), we have to react to it rather than potentially preempting it.
+
+Zabbix may be able to change this, or we may be able to integrate some slack apps, or something may happen, because emails are not the best tool of communication for notifications like these.
+The general idea is that, if you can receive communication that you want to react to in a reasonable timeframe in that same channel, having lots and lots of notifications come through that channel does no one any good.
+Better to have separate channels for all notifications, somehow.
+Slack does a good job of this:
+    Team chat
+        Notification/reporting bots have their own respective channels
+    Direct chats
+        Respective chats have their own notifications
+        Notification/reporting bots live here too
+

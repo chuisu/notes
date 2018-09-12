@@ -1,0 +1,13 @@
+Asset tracking needs to happen asap!
+Filemaker could help, we could look up an open source asset tracking or database tool
+
+Or we could make our own tool with sql
+
+to be done with Jira (IT'S HAPPENING)
+ops doc:
+Setup asset tracking system in Jira (easy part)
+Setup email address to receive asset emails from remote users (all users)
+Send company-wide email instructing users on how to find important, need-to-be-tracked pieces of info
+Cross check against list of AD computers, cross off each computer when all info is known about it
+If computers are missing, find out why
+

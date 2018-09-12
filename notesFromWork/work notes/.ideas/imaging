@@ -1,0 +1,7 @@
+There may be some windows imaging tools we can look at (open source or otherwise)
+
+SCCM is a good one, OSD could work as well
+
+All in all, a netboot imaging workflow would be best, given how many machines we seem to be rolling out
+
+

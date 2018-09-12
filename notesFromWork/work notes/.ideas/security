@@ -1,0 +1,8 @@
+There are a lot of security concerns.
+
+Concerns:
+Password is set to something everybody knows when account first starts
+Many passwords are 1234, or something like this
+There is no secure method to storing accounts/passwords (for IT) so far as I can see
+AS/400 passwords are antequated in their complexity
+
