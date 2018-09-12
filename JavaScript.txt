@@ -72,3 +72,14 @@ ex:
     return translated;
   }
   // that way, each constructed object doesn'
+
+Values are different from types in that types describe and categorize the value.
+Types can be primitive (strings, digits, bools) or objects.
+Objects are a collection of properties
+Arrays are actually special kinds of objects
+Functions are also actually objects
+Classes are a subtype of the object type and include arrays and functions.
+  include: array, function, date, regexp, error, and anything defined with a constructor function.
+garbage collection is automatic
+
+
