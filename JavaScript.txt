@@ -44,3 +44,31 @@ counter++;
 counter;
 	// add 1 to counter
 
+constructor functions must start with a capital letter
+use constructor functions to create objects
+each constructor defines a class of objects
+class refers to the set of objects initialized by the constructor
+ex:
+  function Constructor(x,y) {
+    this.attrib1 = x;
+    this.attrib2 = y;
+  }
+  var thing = new Constructor(1,2);
+  //thing evaluates now to: {attrib1:1, attrib2:2}
+
+constructor function prototypes can be used to give more attributes or methods to constructed objects.
+ex:
+  Constructor.prototype.translate = function(x,y) {
+    this.attrib1 = this.attrib1 + x;
+    this.attrib2 = this.attrib2 + y;
+}
+  thing.translate(1,2) //thing now evaluates to {attrib1:2, attrib2:4}
+  //actually, a better way to do this would be:
+  Constructor.prototype.translate = function(x,y) {
+    var translated = {
+      attrib1: this.attrib1 + x,
+      attrib2: this.attrib2 + y,
+    };
+    return translated;
+  }
+  // that way, each constructed object doesn'
