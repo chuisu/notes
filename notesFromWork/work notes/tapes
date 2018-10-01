@@ -1,0 +1,35 @@
+Initial:
+Eject left tape drive on SnapvRanger
+Remove tapes and place them in order into the blue Iron Mountain bin, ensuring labels are facing up
+Place tape drive back into SnapvRanger
+Remove AS400 tape drive
+Remove tapes and place first six tapes into the blue Iron Mountain bin, ensuring labels are facing up
+Reserve Sunday tape
+Place tape drive back into AS400
+Eject right tape drive from SnapvRanger
+Remove tapes and place them in order into the blue Iron Mountain bin, ensuring labels are facing up
+Place tape drive back into SnapvRanger
+Bring back blue bin and Sunday tape to desk
+
+At desk:
+Open blue Iron Mountain bin
+visit www3.securesync.com and login with your credentials
+Menu > Process Media > OM Distribution List
+Enter today's date into the field below "Service date"
+Under "Add Media" click "Add Media to Distribution List"
+Enter each tape by label, there should be fifteen SnapvRanger tapes and six AS400 tapes for a total of 21 tapes
+Submit and Prepare Report, saving PDF and uploading to:
+  http://sharept/department/IT/_layouts/15/start.aspx#/AS400/Forms/AllItems.aspx?RootFolder=%2Fdepartment%2FIT%2FAS400%2FDocumentation%2FTape%20Backups%2F2018%20tapes&FolderCTID=0x012000F1F04408D2CF254EB0E225CCA07BD422&View=%7BD835A3D2%2D5138%2D4D1E%2D91DC%2D9279F637326A%7D&InitialTabId=Ribbon%2ERead&VisibilityContext=WSSTabPersistence
+Print PDF, fold in half, and place in blue Iron Mountain bin
+
+Out and about:
+Taking blue Iron Mountain bin and Sunday tape, place bin at front desk
+Take stairs to the basement, and place Sunday tape into basement safe
+
+Afternoon:
+When Iron Mountain drops the new bin, pick up the new bin and the week's corresponding Sunday tape from the basement safe
+Place all tapes into their designated drive
+on \\backup2, open the Symantec Backup Exec program
+Storage > Slots > Select all > Right Click > Scratch
+
+You're done!

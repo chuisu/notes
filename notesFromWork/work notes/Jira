@@ -60,5 +60,30 @@ The most readable configurations were those with black text on white background.
 
 Portal setup:
 
+Ticket Importation:
+Used sql query and sql table viewer to find tables and export via csv. Edited using regular expressions in vim to match importing format in Jira
 
+Our main goal is to export all tickets from Spiceworks while simultaneously stripping those tickets of useless information.
+The information necessary to keep for any given ticket is its:
+  ID
+  Summary
+  Status
+  Description
+  Location
+  Date created
+  Date closed
+  Person created by
+  Person assigned to
+  Comments:
+    Comment created by
+    Comment body
+    Comment date
+    If the given comment is external or internal
+Spiceworks provides a way to export tickets through Settings > Advanced Settings > Import/Export tickets
+If you've done everything correctly, you should end up with a .db file that you can open with Sqlite3
+In Sqlite 3, use the following query:
+ADD QUERY HERE
+to parse the relevant information into a csv file
+
+Mail Setup:
 
