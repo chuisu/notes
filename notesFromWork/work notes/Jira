@@ -16,6 +16,8 @@ After the warm handoff, I was tasked with development and logistical planning of
   System facing:
     ticket/issue importation
     mail setup
+    user setup
+    custom fields
 
 Coordinating colors
 Within Jira Administration (gear icon) > System > User interface > Look and feel:
@@ -59,31 +61,80 @@ UI design considerations:
 The most readable configurations were those with black text on white background. There were iterations where text was white with the baillie color as the background. Though this was readable, users (especially agents) would have to read and navigate using these for hours at a time. After a while, this configuration and configurations like it would surely get exhausting. The human eye, however, is accustomed to reading black text on white. Not only does this make for a more comfortable reading experience, but the look that's achieved is quite clean and aesthetic. Implementing the Baillie color (#015e3d) as highlights in this configuration works well for branding without being overt. "Highlighted" items, in this case, comprise the following: links, items with focus, gadget headers, menu items with focus. As these items are a minority on screen real estate, such a bold color as #015e3d provides a balanced contrast. Additionally, when items have focus and gain this color, it provides power to the action that the item telegraphs, allowing the user to more intuitively navigate and use tools.
 
 Portal setup:
+The portal is our most exposed component of Jira and represents the most important part of user interaction: initial reporting. If the portal is too complicated or hard to use, users won't report through here, and not enough data can be captured by sending email alone. Therefore, it was imperative that we set up intuitive request types and categories, with the catchall option being "Get IT help." An intuitive portal would ensure no requests went unnoticed. The following are the request types and fields (the asterisk denotes a required field): 
+Within Projects > BLC > (Lower left) Gear icon > Request types:
+  Common Requests:
+    Get IT Help (service request):
+      Summary*, Description*, Location*, Attachment
+    Desktop/Laptop support (service request):
+      Summary*, Details*, Location*, Attachment
+    Setup VPN to the office (service request):
+      Summary*, Description*, Location*, Attachment
+    Report a system problem (incident):
+      Summary*, Description*, Attachment, Select a system, Impact*, Location*
+  Computers and Devices:
+    Get IT help
+    Desktop/Laptop support
+    Request new software (service request):
+      Summarize the request*, Why do you need this?*, attachment, Location*
+    Request new hardware (service request with approvals):
+      Summary*, Who is your manager?*, Reason*, attachment, Location*
+    New mobile device (service request with approvals):
+      Summary*, Who is your manager?*, Phone details and justification*, attachment, Location*
+    Printer support (service request):
+      Summary*, Description*, Location*
+    Request a desk phone (service request):
+      Summarize your request*, Additional details*, Location*
+  Logins and Accounts:
+    Get IT help
+    Request a new account (service request):
+      Summary*, Select a system*, Tell us why you need an account*, Attachment, Location*
+    Fix an account problem (service request):
+      Summary*, Description*, Attachment, Location*
+    Get a guest wifi account (service request):
+      Summary*, Description*, Guest arrival date, attachment, Location*
+    Setup VPN to the office
+    Request admin access (service request):
+      Summary*, Description*, attachment, Location*
+    Onboard new employees (service request):
+      Summary*, Employee start date, Description*, Attachment, Location*
+  Applications
+    Get IT help
+    Request new software
+    Report a system problem
+    Upgrade or change a managed system (change):
+      Summary*, Description*, Impacted services*, Change type, Change risk, Change reason, Change start date, Change completion date, Attachment, Location*
+  Servers and Infrastructure: 
+    Set up a phone line redirect (service request):
+      Summary*, Description*, Attachment, Location*
+    Report a system problem
+    Upgrade or change a server (change):
+      Summary*, Which server and why?*, Component/s, Change type, Change risk, Change reason, Change start date, Change completion date, Attachment, Location*
+  Hidden from portal (this includes the email request which is used to format requests that come through emails into Jira. More under Mail Setup):
+    Email requests (service request):
+      Description*, Summary*
 
-Ticket Importation:
-Used sql query and sql table viewer to find tables and export via csv. Edited using regular expressions in vim to match importing format in Jira
+Dashboard Implementation:
+Agents needed an initial area where valuable information could be found at a glance. This was implemented through Jira's dashboards, which allowed for several "gadgets" to be placed at the disgression of the administrator. I found that dashboards could be organized into two distinct entities: main and data. The "main" dashboard would include information valuable to an agent's workflow, such as a list of their assigned tickets. The "data" dashboard would include analytics that the agent could look at to judge their performance and the general health of the service desk.
 
-Our main goal is to export all tickets from Spiceworks while simultaneously stripping those tickets of useless information.
-The information necessary to keep for any given ticket is its:
-  ID
-  Summary
-  Status
-  Description
-  Location
-  Date created
-  Date closed
-  Person created by
-  Person assigned to
-  Comments:
-    Comment created by
-    Comment body
-    Comment date
-    If the given comment is external or internal
-Spiceworks provides a way to export tickets through Settings > Advanced Settings > Import/Export tickets
-If you've done everything correctly, you should end up with a .db file that you can open with Sqlite3
-In Sqlite 3, use the following query:
-ADD QUERY HERE
-to parse the relevant information into a csv file
+Queue Setup:
+Integral to an agent's workflow are reliable and well-labeled queues where useful (and sometimes critical) information can be found. 
+
+Ticket/Issue importing:
+See BLC-6 (and subtickets) and BLC-22234
+
 
 Mail Setup:
 
+User setup:
+Jira was tied into Active Directory when the warm handoff occurred, so I did not need to add this external directory. If more info is required on the association of an external directory, Atlassian has the relevant resources.
+My charge with user setup was to ensure that all users of BLC had the correct permissions corresponding to their interactions with the service desk. Users could be categorized into three distinct entities: service desk users, service desk agents, and service desk admins. 
+Service desk users:
+
+
+Custom Fields:
+Many fields that suit the needs of the BLC service desk are available by default, but some needed to be added in order to fulfill our requirements from Jira. In addition to the addition and configuration of these fields, they also needed to be added to certain screens. For the most part, these just needed to be associated with the screens associated with the issue type that these correspond to, or to be widely available. The following are the custom fields provisioned for BLC.
+
+Impact
+Location
+Request type
