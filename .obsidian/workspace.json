@@ -8,15 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "5f76f4da3be38b55",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "0669aaefa9a0c0d1",
+            "id": "96e5c8e70609b16c",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -27,8 +19,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -155,8 +146,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0669aaefa9a0c0d1",
+  "active": "96e5c8e70609b16c",
   "lastOpenFiles": [
-    "C++.md"
+    "C++.md",
+    "JUCE.md"
   ]
 }

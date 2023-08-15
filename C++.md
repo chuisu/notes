@@ -28,3 +28,4 @@ std::vector<std::string> thisIsAStringVector;
 
 What is a template? 
 What is a vector?
+what is a pointer and what are best practices for using pointers? How are they relevant in my JUCE project?
