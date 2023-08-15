@@ -30,13 +30,13 @@ models.py file contains any number of models for the django app
 models use class attributes to define fields
 conceptualize models as spreadsheets with fields as columns, and records as rows
 
-Model:
-		Field
-Record  	|___|___|___|___|
-		|___|___|___|___|
-		|___|___|___|___|
-		|___|___|___|___|
-		|___|___|___|___|
+`Model:
+		`Field`
+`Record  	|___|___|___|___|`
+`		|___|___|___|___|`
+`		|___|___|___|___|`
+`		|___|___|___|___|`
+`		|___|___|___|___|``
 
 Inventory:
 Reqs for app:
@@ -59,10 +59,10 @@ from django.db import models
 	
 				Fields
 		  [	|valueforTitle  |___|___|___|
-One Record|	|valueforAmount |___|___|___|
-		  [	|valueforInteger|___|___|___|
-			|_______________|___|___|___|
-			|_______________|___|___|___|
+`One Record|	|valueforAmount |___|___|___|`
+`		  [	|valueforInteger|___|___|___|`
+`			|_______________|___|___|___|`
+`			|_______________|___|___|___|`
 		
 	#called inventory_item
 model field types:

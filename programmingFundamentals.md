@@ -1,7 +1,7 @@
-#Section
-##Core section
-=Result/conclusion
-*Term
+\#Section
+\##Core section
+\=Result/conclusion
+\*Term
 `example code with # language specific comment`
 
 
