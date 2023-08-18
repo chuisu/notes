@@ -31,8 +31,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -61,7 +60,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#Classes",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +77,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -99,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "C++ datatypes.md",
+                "file": "C++.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "C++ datatypes.md",
+                "file": "C++.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "C++ datatypes.md"
+                "file": "C++.md"
               }
             }
           }
@@ -160,10 +160,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "780fa0b7d6e5438f",
+  "active": "96e5c8e70609b16c",
   "lastOpenFiles": [
-    "C++.md",
     "C++ datatypes.md",
+    "C++.md",
     "macStudy.md",
     "programmingFundamentals.md",
     "python.md",
