@@ -107,12 +107,37 @@ a pointer is a variable that stores memory to the address of another variable. I
 `int* p = &x; // Declare a pointer and initialize it with the address of x, by reference`
 `std::cout << \*p; // Output the value pointed to by p (42)`
 
-angle brackets, <> in C++ are used for template specialization. Templates can take any data type while being type safe. For example:
-`std::vector<int> thisIsAnIntVector; 
+angle brackets, <> in C++ are used for template specialization. Templates can take any data type while being type safe. 
+
+Basically, it allows you to use any datatype when you declare a function, like this:
+`template <typename T>;` this makes `T` able to have any type, in a function, it looks like this:
+`T myFunction(T x, T y) {return x + y}` This uses `T` to say `x` and `y` can be anything, and adds them together
+That way, whether x and y are ints or floats or doubles, they can be added.
+What happens when they are a `std::string`?
+
+So what is a template?
+Basically, a template is an argument where you use angle brackets to specify a datatype
+It can be used in various ways, as in above, and also to specialize a datatype when you instantiate a class template, such as `std::lock_guard`, which you would follow up with `<std::mutex>` if you were creating a lock guard specifically for the type `std::mutex`. Pretty confusing, but I think this is to be thorough, and to be specific with datatypes for certain class templates. ADDENDUM, now that I understand a bit more of this: you HAVE to specify the datatype because it's a template class, and otherwise it wouldn't know what datatype to operate on.
+
+So what is a class template, template class?
+A class template or template class is the usage of the `template` and `typename` keywords like we used above. It's a class that can take any datatype because it was templated to do certain things agnostic of datatype. For example,
+`template <typename T>;`
+`class myClass {`
+`private: T element;` this creates a variable called element that can be any type
+`public:`
+`    myClass(T element): element(element) {}`
+`    T get() { return element; }`
+`    void set(T newElement) { element = newElement; }`
+`};`
+and then you would use it via `myClass<int> myIntContainer(42);` or something like that to specify that we're using the int datatype for this class.
+basically, there are a lot of classes in C++ that are built this way, and you have to use angle brackets to specify datatypes for certain classes.
+
+What is a vector?
+A vector is like an array, but it's variable in size. In C++, arrays have a fixed size.
+For example:
+`std::vector<int> thisIsAnIntVector;` here, we initialized a new vector called thisIsAnIntVector.
 `std::vector<std::string> thisIsAStringVector;`
 
-What is a template? 
-What is a vector?
 what is a pointer and what are best practices for using pointers? How are they relevant in my JUCE project?
 what is a constructor?
 
