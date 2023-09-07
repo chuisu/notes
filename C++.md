@@ -147,7 +147,16 @@ there are many [[C++ datatypes]], but what is a const?
 are a special member function in a class
 they can be identified in that they use `:` 
 they also *must have the same name as the class* as in the #magic8ball example
-
+can have different types: 
+-default (this just is a function with the same name)
+-parameterized
+	`class Class {
+	`public:
+		`int a;
+		`Class(int ClassVariable) : a(ClassVariable) {}
+	`};
+The above basically says:
+	let's create a class that uses one variable (a), and when we instantiate this class, we're going to call it like this: `Class class(4);`, and this '4' 
 # Class inheritance
 Classes can inherit from other classes (subclassing) by using the colon `:`. The colon implies inheritance. An example looks like this:
 `class Animal {`
@@ -162,3 +171,14 @@ When listing multiple base classes to inherit from, you separate the list via a 
 	`public:
 		`method()`
 	`}
+I also think it's worth mentioning that creating an instance of a class is a separate statement basically using the class as a keyword (almost). As the above, you would have
+	`int main() {
+		`Dog fido;
+		`fido.eat();
+		`}
+I would like to know if this sort of statement has a name: it's actually called object declaration or object instantiation.
+Object/class instantiation can happen directly after
+	`class Class {} Class;`
+
+Runtime polymorphism is when objects of different types are treated as objects of a common base type, like the class dog or cat being from the base class Animal
+Virtual functions allow for runtime polymorphism because they allow the base class to, for a given function, have a default implementation for generic use cases (in case the function has not been overridden)
