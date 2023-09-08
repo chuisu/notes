@@ -100,8 +100,8 @@ other datatypes will of course return that datatype.
 `Int` is used for error handling: `return 0` is used for a successful execution
 
 an `&` is a pass by reference. This means that the function will have direct access to the variable, not just a copy
-
 a pointer is a variable that stores memory to the address of another variable. It stores the memory address of a value that can be accessed later.
+Here, we can jump to #passbyreference
 
 `int x = 42; // Declare an integer variable `
 `int* p = &x; // Declare a pointer and initialize it with the address of x, by reference`
@@ -110,7 +110,7 @@ a pointer is a variable that stores memory to the address of another variable. I
 angle brackets, <> in C++ are used for template specialization. Templates can take any data type while being type safe. 
 
 Basically, it allows you to use any datatype when you declare a function, like this:
-`template <typename T>;` this makes `T` able to have any type, in a function, it looks like this:
+`template <typename T>;` this makes `T` able to have any type, in a function, it looks like this: ADDENDUM, `T` itself doesn't have a type, it is a placeholder for a datatype like `int` or `float`.
 `T myFunction(T x, T y) {return x + y}` This uses `T` to say `x` and `y` can be anything, and adds them together
 That way, whether x and y are ints or floats or doubles, they can be added.
 What happens when they are a `std::string`?
@@ -182,3 +182,37 @@ Object/class instantiation can happen directly after
 
 Runtime polymorphism is when objects of different types are treated as objects of a common base type, like the class dog or cat being from the base class Animal
 Virtual functions allow for runtime polymorphism because they allow the base class to, for a given function, have a default implementation for generic use cases (in case the function has not been overridden)
+
+a #passbyreference and #pointers are really statements of memory pointing explicit data, rather than the data itself. It's redundant to have more than one instance of data, so we can point to where that data is stored in RAM rather than have to create another instance of it.
+It's important here to know that our program operates on RAM, and that each byte of RAM has an address (like a house address), that we can call upon.
+Here are some examples:
+Declaration:
+`int* thisIsAPointer;`
+	the above declares a variable that can hold the *address* of an integer.
+Initialization:
+`int x = 10;`
+`int* thisIsAPointerToX = &x;`
+	in the above, the `&` operator retrieves the address of the variable that we already called.
+	**it's important to note that `thisIsAPointerToX` in the above code does not equal 10, rather, it contains the address of `x`. In order to get the value of `x` we would have to dereference (see below)**
+Dereferencing:
+`*thisIsAPointerToX = 20;`
+	The above changes the value of `x` to 20 by means of changing the data stored in the address of `x`.
+
+If we talk about `&`, we're talking about references (references at times become aliases because they reference a piece of data (rather than point to it))
+	`int x = 10;`
+	`int& referenceToX = x;`
+		in the above, `referenceToX` has been initialized as an alias to `x`, meaning that any time we call `referenceToX` or `x` itself, we're talking about the same data. For example `referenceToX = 20;` `std::cout << x;` would give us 20.
+	in the above, it's important to note that passing by reference here actually has significant impacts on how the code functions. for example, 
+		`void increment1(int num) {
+			`num ++;
+			`}`
+		`void increment2(int& num) {
+			`num ++;
+			`}`
+		`int main() {
+			`int x = 10;`
+			`increment1(x);
+			`increment2(x);`
+		`}
+			in the above, actually, increment1 does not make x = 11. increment2 makes x = 11.
+			Basically, the argument in increment1 is only a local copy (it's modifying num, not x), but because increment2 passes it by reference (num becomes an alias for x) it actually operates on x.
