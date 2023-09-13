@@ -169,7 +169,7 @@ In the above example, the class `Dog` would inherit `eat()` from `Animal`
 When listing multiple base classes to inherit from, you separate the list via a comma
 `class Dog : public Animal, public Mammal {
 	`public:
-		`method()`
+		`void method()`
 	`}
 I also think it's worth mentioning that creating an instance of a class is a separate statement basically using the class as a keyword (almost). As the above, you would have
 	`int main() {
@@ -184,7 +184,8 @@ Runtime polymorphism is when objects of different types are treated as objects o
 Virtual functions allow for runtime polymorphism because they allow the base class to, for a given function, have a default implementation for generic use cases (in case the function has not been overridden)
 
 a #passbyreference and #pointers are really statements of memory pointing explicit data, rather than the data itself. It's redundant to have more than one instance of data, so we can point to where that data is stored in RAM rather than have to create another instance of it.
-It's important here to know that our program operates on RAM, and that each byte of RAM has an address (like a house address), that we can call upon.
+It's important here to know that our program operates on RAM, and that each byte of RAM has an address (like a house address), that we can call upon. 
+It's fun to think about the data living at its house, and if you need it to send a message somewhere, send it a message, it to travel somewhere, or for someone else to live there, you can ask it!
 Here are some examples:
 Declaration:
 `int* thisIsAPointer;`

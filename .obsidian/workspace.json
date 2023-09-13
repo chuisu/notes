@@ -43,7 +43,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -111,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "C++.md",
+                "file": "JUCE.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "C++.md",
+                "file": "JUCE.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -151,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "C++.md"
+                "file": "JUCE.md"
               }
             }
           }
@@ -172,10 +173,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "96e5c8e70609b16c",
+  "active": "10a863dfa739423c",
   "lastOpenFiles": [
-    "JUCE.md",
     "C++.md",
+    "JUCE.md",
     "C++ datatypes.md",
     "macStudy.md",
     "programmingFundamentals.md",

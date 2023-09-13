@@ -1,5 +1,8 @@
 *and other stuff as well*
 
+functions allllll have a return type, even void
+EXCEPT for constructor functions
+
 classics are:
 	`int`; `double`; `std::string`; `char`, etc
 
@@ -15,3 +18,6 @@ classics are:
 		`const int* p;` and `int* const p `
 	`const` member functions in a class mean that the member function will not modify any non-static data members of the object on which it's called
 		this is essentially a promise that calling this function won't change the state of the object
+
+`auto`:
+	is a fantastic datatype because it automatically declares the correct datatype when working with something like a member function whose returned data you don't necessarily know
