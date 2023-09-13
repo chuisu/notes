@@ -52,6 +52,5 @@ clearly, if we have thousands of params, this is not exactly scalable.
 `getStateInformation(juce::MemoryBlock& destData)`
 `setStateInformation(const void* data, int sizeInBytes)`
 can look more into the above for making sure that the plugin state is serialized to and deserialized from (so that the daw remembers what settings we had)
-
-
+this comes from `state.copyState().createXml()`, `copyXmlToBinary()`, and eventually for deserialization, `getXmlFromBinary`
 
