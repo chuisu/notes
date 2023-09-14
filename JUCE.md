@@ -54,3 +54,9 @@ clearly, if we have thousands of params, this is not exactly scalable.
 can look more into the above for making sure that the plugin state is serialized to and deserialized from (so that the daw remembers what settings we had)
 this comes from `state.copyState().createXml()`, `copyXmlToBinary()`, and eventually for deserialization, `getXmlFromBinary`
 
+# debugging
+gdb, lldb
+add logging output, trace function calls
+use breakpoints!
+
+processBlock should set the buffer size to one sixteenth note, and should, at the end of each loop, readjust the  
